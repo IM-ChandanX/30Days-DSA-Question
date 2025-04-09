@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+/*Find a pair with the given sum in an array*/
+
+int Fdpair(int nums[], int n, int target)
+{
+    bool found = false;
+    // Traverse the array and check for pairs
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            if(nums[i]+nums[j]==target)
+            {
+                cout<<"pair is"<<" " << nums[i]<<" "<<"and" <<" "<< nums[j]<<endl;
+                found = true;
+            }
+        }
+
+    }
+    if(!found)
+    {
+        cout<<"pair not found"<<endl;
+    }
+    return 0;
+}
+// Time complexity is O(n^2) and space complexity is O(1)
+
+int main()
+{
+    int nums[]={8,7,2,5,3,5};
+    int target =10;
+    int n =sizeof(nums)/sizeof(nums[0]);
+    Fdpair(nums,n,target);
+    return 0;
+}
