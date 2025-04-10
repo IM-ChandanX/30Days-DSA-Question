@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+/*Find all subarrays with 0 sum in an array*/
+// Time complexity is O(n^2) and space complexity is O(1)
+
+int Subarr(int nums[], int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        int sum =0;
+        for(int j=i;j<n;j++)
+        {
+            sum+=nums[j];
+            if(sum==0)
+            {
+                cout<<"Subarray with 0 sum is: ";
+                for(int k=i;k<=j;k++)
+                {
+                    cout<<nums[k]<<" ";
+                }
+                cout<<endl;
+            }   
+        }
+    }
+
+}
+
+int main()
+{
+    int nums[]={3,4,-7,3,1,3,1,-4,-2,-3};
+    int n = sizeof(nums)/sizeof(nums[0]);
+    Subarr(nums,n);
+    return 0;
+}
