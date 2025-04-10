@@ -1,5 +1,5 @@
 Day01- Find all possible pair with the given sum in an array
-Input: nums = [8, 7, 2, 5, 3, 1]
+# Input: nums = [8, 7, 2, 5, 3, 1]
 target = 10 
 Output: 
 Pair found (8, 2)
