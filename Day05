@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+
+int swap(int arr[], int i, int j)
+{
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+
+void rerange(int arr[], int end)
+{
+    int start = 0, mid = 0;
+    int pivot = 1;
+
+    while(mid <= end)
+    {
+        if (arr[mid] < pivot)
+        {
+            swap(arr, start, mid);
+            start++;
+            mid++;
+        }
+        else if (arr[mid] > pivot)
+        {
+            swap(arr, mid, end);
+            end--;
+        }
+        else
+        {
+            mid++;
+        }
+    }
+
+}
+
+int main()
+{
+    int arr[] = { 0, 1, 2, 2, 1, 0, 0, 2, 0, 1, 1, 0 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+    rerange(arr, n - 1);
+    cout << "Rearranged array is: ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}
